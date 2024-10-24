@@ -1,6 +1,23 @@
 {
+  "name": "cypress-api-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api-tests": "npx cypress run --spec 'cypress/e2e/api-tests/users.js' --record --key 11391b13-cb6a-488b-be82-ad9c42d15e4d",
+    "clean:reports": "rimraf cypress/reports/html/.jsons/*",
+    "report": "npx marge cypress/reports/mochawesome.json --reportDir cypress/reports/html",
+    "api-tests-report": "npm run clean:reports && npm run api-tests && npm run report"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.10.0",
-    "faker": "^6.6.6"
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^13.15.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^6.0.1"
   }
 }

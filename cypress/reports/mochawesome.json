@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-24T14:01:02.235Z",
+    "end": "2024-10-24T14:01:06.688Z",
+    "duration": 4453,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3fc1beb3-9d3e-45c9-b590-6f8ba9c773c8",
+      "title": "",
+      "fullFile": "cypress/e2e/api-tests/users.js",
+      "file": "cypress/e2e/api-tests/users.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+          "title": "User API Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a user with dynamic data",
+              "fullTitle": "User API Tests should create a user with dynamic data",
+              "timedOut": null,
+              "duration": 1402,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _apiHelpers.createResource)('users', userData).then(response => {\n  expect(response.status).to.eq(201);\n  userId = response.body.id; // Store user ID\n});",
+              "err": {},
+              "uuid": "83cb3717-fee6-4832-ae6d-887c2a777a2a",
+              "parentUUID": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch user details",
+              "fullTitle": "User API Tests should fetch user details",
+              "timedOut": null,
+              "duration": 846,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _apiHelpers.getResource)('users', userId).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('name', userData.name);\n  expect(response.body).to.have.property('email', userData.email);\n  expect(response.body).to.have.property('gender', userData.gender);\n  expect(response.body).to.have.property('status', userData.status);\n});",
+              "err": {},
+              "uuid": "f6a85341-6520-486c-bfbb-6007ba3df82c",
+              "parentUUID": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should update user details",
+              "fullTitle": "User API Tests should update user details",
+              "timedOut": null,
+              "duration": 629,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _apiHelpers.updateResource)('users', userId, updatedUserData).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('name', updatedUserData.name);\n  expect(response.body).to.have.property('email', updatedUserData.email);\n  expect(response.body).to.have.property('gender', updatedUserData.gender);\n  expect(response.body).to.have.property('status', updatedUserData.status);\n});",
+              "err": {},
+              "uuid": "15253025-438f-4a52-a8c9-8290cec093e8",
+              "parentUUID": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fetch updated user details",
+              "fullTitle": "User API Tests should fetch updated user details",
+              "timedOut": null,
+              "duration": 605,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _apiHelpers.getResource)('users', userId).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('name', updatedUserData.name);\n  expect(response.body).to.have.property('email', updatedUserData.email);\n  expect(response.body).to.have.property('gender', updatedUserData.gender);\n  expect(response.body).to.have.property('status', updatedUserData.status);\n});",
+              "err": {},
+              "uuid": "5951018c-2826-41dc-b65f-75f65df16bbc",
+              "parentUUID": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete the user",
+              "fullTitle": "User API Tests should delete the user",
+              "timedOut": null,
+              "duration": 894,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _apiHelpers.deleteResource)('users', userId).then(response => {\n  expect(response.status).to.eq(204);\n});",
+              "err": {},
+              "uuid": "c7256255-dc2f-4377-81ae-cc8a7f87d1f4",
+              "parentUUID": "b3ee3f41-e18b-4421-9ea9-c88b3fff4445",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "83cb3717-fee6-4832-ae6d-887c2a777a2a",
+            "f6a85341-6520-486c-bfbb-6007ba3df82c",
+            "15253025-438f-4a52-a8c9-8290cec093e8",
+            "5951018c-2826-41dc-b65f-75f65df16bbc",
+            "c7256255-dc2f-4377-81ae-cc8a7f87d1f4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4376,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
